@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body, html{
+            height: 100%;
+        }
+        /* .links-container{
+            display: none;
+        } */
+        .links-container{
+            display: none;
+            /* flex-direction: column; */
+            width: 0;
+            /* height: 100vh; */
+            /* background-color: rgb(122, 209, 231); */
+            /* position: absolute; */
+            /* top: 0;
+            left: 0; */
+            box-shadow: 2px 4px 10px 2px #00000057;
+            transition: width 0.5s ease;
+            /* overflow: hidden; */
+        }
+        
+        #sidebar:checked ~ .links-container{
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            height: 100vh;
+            background-color: rgb(122, 209, 231);
+            position: relative;
+            box-shadow: 2px 4px 10px 2px #00000057;
+
+        }
+        #sidebar{
+            display: none;
+
+        }
+        .sidebar-button{
+            cursor: pointer;
+            position: absolute;
+            z-index: 10;
+            top: 10px;
+            left: 10px;
+        }
+
+        .sidebar-button .line{
+            width: 20px;
+            height: 3px;
+            background-color: black;
+            margin-bottom: 5px;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+
+        }
+        #sidebar:checked ~ .sidebar-button .top{
+            transform: rotate(45deg);
+            /* transition: 0.5s ease-out; */
+            position: relative;
+            top: 8px;
+        }
+        #sidebar:checked ~ .sidebar-button .mid{
+            /* transform: rotate(-45deg); */
+            /* transition: 0.5s ease-out; */
+            opacity: 0;
+        }
+        #sidebar:checked ~ .sidebar-button .bottom{
+            /* display: none; */
+            transform: rotate(-45deg);
+            position: relative;
+            top: -8px;
+        }
+        .links-container a{
+            color: black;
+            padding: 20px 50px;
+            background-color: rgb(197, 184, 110);
+            margin: 10px 5px;
+            border-radius: 10px;
+            text-decoration: none;
+            text-align: center;
+            position: relative;
+            top: 30px;
+            
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" name="" id="sidebar">
+        <label for="sidebar" class="sidebar-button">
+            <div class="line top"></div>
+            <div class="line mid"></div>
+            <div class="line bottom"></div>
+        </label>
+        <div class="links-container">
+            <a href="#">Home</a>
+            <a href="#">about</a>
+            <a href="#">menu</a>
+            <a href="#">see</a>
+        </div>
+    </nav>
+</body>
+</html>
